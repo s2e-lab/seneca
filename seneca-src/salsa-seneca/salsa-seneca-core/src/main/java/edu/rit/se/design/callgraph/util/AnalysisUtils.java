@@ -8,6 +8,7 @@ import com.ibm.wala.ipa.cha.ClassHierarchyFactory;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.util.config.FileOfClasses;
+import edu.rit.se.design.dodo.utils.ResourceLoader;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,7 +41,8 @@ public class AnalysisUtils {
 
         // add standard libraries to scope (JavaSE)
         for (String stdlib : new String[]{"rt.jar", "jsse.jar", "jce.jar"}) {
-            scope.addToScope(ClassLoaderReference.Primordial, new JarFile("../../config/JREs/jre1.8_mini/lib/" + stdlib));
+            String libPath = ResourceLoader.getResourcePath("/config/JREs/jre1.8_mini/lib/" + stdlib);
+            scope.addToScope(ClassLoaderReference.Primordial, new JarFile(libPath));
         }
 
         // find dependencies to be added as Extension scope

@@ -1,5 +1,6 @@
 package edu.rit.se.design.dodo.utils.wala;
 
+import edu.rit.se.design.dodo.utils.ResourceLoader;
 import org.junit.Test;
 
 import java.io.File;
@@ -16,7 +17,7 @@ public class MethodDescriptorsLoaderTest {
      */
     @Test
     public void testLoadEntrypointsFromCSV() throws Exception {
-        File csv = new File("../../config/entrypoints.csv");
+        File csv = ResourceLoader.getResourceFile("/config/entrypoints.csv");
         System.out.println("testLoadEntrypointsFromCSV() " + csv.getName());
         List<EntrypointDescriptor> descriptorsMap = MethodDescriptorsLoader.loadEntrypointsFromCsv(csv, true);
         descriptorsMap.forEach((EntrypointDescriptor entry) -> {
@@ -32,7 +33,7 @@ public class MethodDescriptorsLoaderTest {
      */
     @Test
     public void testLoadSinksFromCSV() throws Exception {
-        File csv = new File("../../config/sinks.csv");
+        File csv = ResourceLoader.getResourceFile("/config/sinks.csv");
         System.out.println("testLoadSinksFromCSV() " + csv.getName());
         List<SinkDescriptor> descriptorsMap = MethodDescriptorsLoader.loadSinksFromCsv(csv, true);
         descriptorsMap.forEach((SinkDescriptor entry) -> {

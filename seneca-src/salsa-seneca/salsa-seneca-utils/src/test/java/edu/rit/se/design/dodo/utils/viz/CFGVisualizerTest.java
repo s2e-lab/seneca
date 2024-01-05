@@ -21,6 +21,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class CFGVisualizerTest {
 
+    //FIXME: change the hardcoded path to a relative path to the test resources
     private static final String TEST_ASSETS_FOLDER = TestUtils.ROOT_TEST_ASSETS + "dodo-utils/graphs/";
     private static final String OUTPUT_FOLDER = "./target/test-results/";
 

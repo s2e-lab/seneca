@@ -8,6 +8,8 @@
     <artifactId>salsa-seneca</artifactId>
     <packaging>pom</packaging>
     <version>0.2</version>
+
+
     <modules>
         <module>salsa-seneca-utils</module>
         <module>salsa-seneca-core</module>

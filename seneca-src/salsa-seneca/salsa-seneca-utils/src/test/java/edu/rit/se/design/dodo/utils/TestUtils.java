@@ -19,18 +19,22 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author Joanna C. S. Santos <jds5109@rit.edu>
+ * Utility class for testing purposes.
+ *
+ * @author Joanna C. S. Santos (jds5109@rit.edu)
  */
 public class TestUtils {
 
     // configuration for the SDG/Call Graph extractions
-    private static final String EXCLUSIONS_FILE = "../../config/exclusions/CustomJavaExclusions-DODO.txt";
+    private static final String EXCLUSIONS_FILE = ResourceLoader.getResourcePath("/config/exclusions/CustomJavaExclusions-DODO.txt");
 
     // data and control dependence options
     private static final Slicer.DataDependenceOptions DATA_DEPENDENCE_OPTION = Slicer.DataDependenceOptions.NO_BASE_NO_HEAP;
     private static final Slicer.ControlDependenceOptions CONTROL_DEPENDENCE_OPTION = Slicer.ControlDependenceOptions.FULL;
 
-    public static final String ROOT_TEST_ASSETS  = "../../../DODO-TestData/";
+    // FIXME: replace this hardcoded path to the test resources folder with a relative path
+    public static final String ROOT_TEST_ASSETS = "../../../DODO-TestData/";
+
     /**
      * It computes a {@link SDG}, {@link CallGraph}, {@link IClassHierarchy} and other meta data from a project's artifact.
      *
