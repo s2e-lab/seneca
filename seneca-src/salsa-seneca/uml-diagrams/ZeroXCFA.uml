@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.ibm.wala.ipa.callgraph.propagation.HeapModel</OriginalElement>
+  <nodes>
+    <node x="740.5469755469755" y="99.0">com.ibm.wala.ipa.callgraph.ContextSelector</node>
+    <node x="1435.4375" y="357.0">com.ibm.wala.analysis.reflection.ReflectionContextInterpreter</node>
+    <node x="677.8059765122266" y="0.0">com.ibm.wala.ipa.callgraph.propagation.InstanceKeyFactory</node>
+    <node x="24.72554697554699" y="357.0">com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder</node>
+    <node x="799.9375" y="238.0">com.ibm.wala.ipa.callgraph.impl.DelegatingContextSelector</node>
+    <node x="1248.4375" y="357.0">com.ibm.wala.ipa.callgraph.propagation.cfa.ZeroXInstanceKeys</node>
+    <node x="560.5469755469755" y="99.0">com.ibm.wala.ipa.callgraph.CallGraphBuilder</node>
+    <node x="144.625" y="238.0">com.ibm.wala.ipa.callgraph.propagation.cfa.DefaultPointerKeyFactory</node>
+    <node x="1244.2657255469755" y="99.0">com.ibm.wala.ipa.callgraph.propagation.ClassBasedInstanceKeys</node>
+    <node x="10.5" y="238.0">com.ibm.wala.ipa.callgraph.propagation.HeapModel</node>
+    <node x="1078.9375" y="238.0">com.ibm.wala.ipa.callgraph.propagation.AllocationSiteInNodeFactory</node>
+    <node x="131.69650096525106" y="99.0">com.ibm.wala.ipa.callgraph.propagation.PointerKeyFactory</node>
+    <node x="833.4791666666666" y="486.0">com.ibm.wala.ipa.callgraph.propagation.cfa.ZeroXCFABuilder</node>
+    <node x="1378.9375" y="238.0">com.ibm.wala.ipa.callgraph.propagation.SmushedAllocationSiteInstanceKeys</node>
+    <node x="300.10323218997365" y="269.81068601583115">com.ibm.wala.ipa.callgraph.propagation.PropagationCallGraphBuilder</node>
+    <node x="637.1565154440154" y="357.0">com.ibm.wala.ipa.callgraph.impl.DefaultContextSelector</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.SmushedAllocationSiteInstanceKeys" target="com.ibm.wala.ipa.callgraph.propagation.InstanceKeyFactory">
+      <point x="93.0" y="-14.5" />
+      <point x="1611.4375" y="218.0" />
+      <point x="1526.259000965251" y="218.0" />
+      <point x="1526.259000965251" y="49.0" />
+      <point x="840.9309765122266" y="49.0" />
+      <point x="76.125" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.cfa.ZeroXInstanceKeys" target="com.ibm.wala.ipa.callgraph.propagation.InstanceKeyFactory">
+      <point x="-73.0625" y="-14.5" />
+      <point x="1258.875" y="337.0" />
+      <point x="1048.4375" y="337.0" />
+      <point x="1048.4375" y="79.0" />
+      <point x="775.6809765122266" y="79.0" />
+      <point x="10.875" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.PropagationCallGraphBuilder" target="com.ibm.wala.ipa.callgraph.CallGraphBuilder">
+      <point x="33.85714285714289" y="-14.5" />
+      <point x="552.9821428571429" y="168.0" />
+      <point x="640.5469755469755" y="168.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.HeapModel" target="com.ibm.wala.ipa.callgraph.propagation.InstanceKeyFactory">
+      <point x="-27.75" y="-14.5" />
+      <point x="38.25" y="59.0" />
+      <point x="710.4309765122266" y="59.0" />
+      <point x="-54.375" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.cfa.ZeroXCFABuilder" target="com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder">
+      <point x="-53.55000000000007" y="-14.5" />
+      <point x="856.4291666666666" y="456.0" />
+      <point x="239.725546975547" y="456.0" />
+      <point x="86.0" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.impl.DefaultContextSelector" target="com.ibm.wala.ipa.callgraph.ContextSelector">
+      <point x="-25.25" y="-14.5" />
+      <point x="712.9065154440154" y="208.0" />
+      <point x="800.0469755469755" y="208.0" />
+      <point x="-17.0" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder" target="com.ibm.wala.ipa.callgraph.propagation.PropagationCallGraphBuilder">
+      <point x="64.5" y="-14.5" />
+      <point x="218.225546975547" y="327.0" />
+      <point x="489.5" y="327.0" />
+      <point x="-29.625" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.ClassBasedInstanceKeys" target="com.ibm.wala.ipa.callgraph.propagation.InstanceKeyFactory">
+      <point x="0.0" y="-14.5" />
+      <point x="1345.2657255469755" y="59.0" />
+      <point x="819.1809765122266" y="59.0" />
+      <point x="54.375" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.AllocationSiteInNodeFactory" target="com.ibm.wala.ipa.callgraph.propagation.InstanceKeyFactory">
+      <point x="-79.0" y="-14.5" />
+      <point x="1118.4375" y="218.0" />
+      <point x="1141.5157255469755" y="218.0" />
+      <point x="1141.5157255469755" y="69.0" />
+      <point x="797.4309765122266" y="69.0" />
+      <point x="32.625" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.HeapModel" target="com.ibm.wala.ipa.callgraph.propagation.PointerKeyFactory">
+      <point x="27.75" y="-14.5" />
+      <point x="93.75" y="208.0" />
+      <point x="148.3965009652511" y="208.0" />
+      <point x="-66.80000000000001" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.cfa.DefaultPointerKeyFactory" target="com.ibm.wala.ipa.callgraph.propagation.PointerKeyFactory">
+      <point x="0.0" y="-14.5" />
+      <point x="252.625" y="218.0" />
+      <point x="215.19650096525106" y="218.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.impl.DelegatingContextSelector" target="com.ibm.wala.ipa.callgraph.ContextSelector">
+      <point x="-74.33333333333326" y="-14.5" />
+      <point x="837.1041666666667" y="218.0" />
+      <point x="834.0469755469755" y="218.0" />
+      <point x="17.0" y="14.5" />
+    </edge>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder" target="com.ibm.wala.ipa.callgraph.propagation.HeapModel">
+      <point x="-64.5" y="-14.5" />
+      <point x="89.22554697554699" y="327.0" />
+      <point x="38.25" y="327.0" />
+      <point x="-27.75" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8349112426035503" x="845.0" y="257.5" />
+  <SelectedNodes>
+    <node>com.ibm.wala.ipa.callgraph.propagation.PropagationCallGraphBuilder</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
