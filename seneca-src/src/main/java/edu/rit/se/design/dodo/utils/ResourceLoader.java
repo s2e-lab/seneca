@@ -1,6 +1,11 @@
 package edu.rit.se.design.dodo.utils;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Utility class to load resources from the classpath.
@@ -16,7 +21,9 @@ public class ResourceLoader {
      * @return the absolute path of the resource.
      */
     public static String getResourcePath(String resource) {
-        return ResourceLoader.class.getResource(resource).getPath();
+//        return ResourceLoader.class.getResource(resource).getPath();
+
+        return getResourceFile(resource).getAbsolutePath();
     }
 
     /**
@@ -26,7 +33,19 @@ public class ResourceLoader {
      * @return a file pointer to the resource.
      */
     public static File getResourceFile(String resource) {
-        return new File(getResourcePath(resource));
+//        return new File(getResourcePath(resource));
+
+        try {
+            InputStream in = ResourceLoader.class.getResourceAsStream(resource);
+            File tempFile = File.createTempFile("temp", ".tmp");
+            tempFile.deleteOnExit();
+            FileOutputStream out = new FileOutputStream(tempFile);
+            IOUtils.copy(in, out);
+            return tempFile;
+        } catch (IOException e) {
+
+        }
+        return null;
     }
 
 
