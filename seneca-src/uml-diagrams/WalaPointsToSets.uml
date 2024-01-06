@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1892.5" y="-35.5">com.ibm.wala.ipa.callgraph.propagation.PointsToMap</node>
+    <node x="-26.5" y="-0.5">com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder</node>
+    <node x="-16.5" y="2205.5">com.ibm.wala.ipa.callgraph.propagation.PointsToSetVariable</node>
+    <node x="91.5" y="910.5">com.ibm.wala.ipa.callgraph.propagation.PropagationCallGraphBuilder</node>
+    <node x="853.0" y="-13.5">com.ibm.wala.ipa.callgraph.propagation.PropagationSystem</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder" target="com.ibm.wala.ipa.callgraph.propagation.PropagationCallGraphBuilder">
+      <point x="0.0" y="400.5" />
+      <point x="0.0" y="-609.5" />
+    </edge>
+  </edges>
+  <settings layout="Directed Orthogonal" zoom="0.7434554973821988" x="760.5000000000001" y="899.0" />
+  <SelectedNodes>
+    <node>com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
