@@ -1,7 +1,0 @@
-This is a subset of the Java 8 classes, to be used for fast
-fact/Jimple generation.
-
-To create it from jre1.8 in doop-benchmarks:
-
-  cd ${DOOP_BENCHMARKS}/JREs/jre1.8_mini/lib
-  ../strip-jars.sh
