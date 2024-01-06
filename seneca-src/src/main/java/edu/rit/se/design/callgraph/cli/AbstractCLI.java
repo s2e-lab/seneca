@@ -117,8 +117,9 @@ public abstract class AbstractCLI {
                 new DotCallGraphSerializer().save(cg, outputFile);
                 break;
             case JSON:
-                new JsonJcgSerializer().save(cg, outputFile);
-                break;
+                throw new UnsupportedOperationException("JSON serialization is not supported yet");
+                //new JsonJcgSerializer().save(cg, outputFile);
+                //break;
             case JDYN:
                 new JDynCallGraphSerializer().save(cg, outputFile);
                 break;
@@ -168,7 +169,7 @@ public abstract class AbstractCLI {
         Option output = new Option(OUTPUT.substring(0, 1), OUTPUT, true, "Path to the output file with the serialized call graph");
         output.setRequired(true);
 
-        Option formatOpt = new Option(FORMAT.substring(0, 1), FORMAT, true, "Output format (possible values: json, csv [default = json])");
+        Option formatOpt = new Option(FORMAT.substring(0, 1), FORMAT, true, "Output format (possible values: dot, jdyn). JDyn is a custom format that saves the call graph as tuples (caller, callee)");
         formatOpt.setType(OutputFormat.class);
         formatOpt.setRequired(true);
 

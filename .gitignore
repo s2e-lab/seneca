@@ -1,3 +1,19 @@
+# Project-specific folders
+/target/
+dataset/build
+Results-old.xlsx
+~$*.xlsx
+.idea/
+target/
+runtime-cgs/
+dataset/maven/libraries
+scripts/libs/gadget-inspector-all.jar
+dataset/xcorpus
+
+
+# Large jar file with all dependencies 
+seneca.jar
+
 # OS generated files #
 .DS_Store
 .DS_Store?
