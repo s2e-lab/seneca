@@ -1,0 +1,3 @@
+org/apache/batik/dom/AbstractDocument.readObject(Ljava/io/ObjectInputStream;)V (1)
+  java/lang/reflect/Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0)
+

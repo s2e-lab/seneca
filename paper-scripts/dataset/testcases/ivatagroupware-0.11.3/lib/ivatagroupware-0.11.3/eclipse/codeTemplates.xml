@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates><template id="org.eclipse.jdt.ui.text.codetemplates.gettercomment" name="gettercomment" description="Comment for getter method" context="gettercomment_context" enabled="true" deleted="false">/**
+ * @return Returns the ${bare_field_name}.
+ */</template><template id="org.eclipse.jdt.ui.text.codetemplates.settercomment" name="settercomment" description="Comment for setter method" context="settercomment_context" enabled="true" deleted="false">/**
+ * Refer to {@link #get${bare_field_name}}.
+ * @param ${param} Refer to {@link #get${bare_field_name}}.
+ */</template><template id="org.eclipse.jdt.ui.text.codetemplates.constructorcomment" name="constructorcomment" description="Comment for created constructors" context="constructorcomment_context" enabled="true" deleted="false">/**
+ * ${tags}
+ */</template><template id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment" description="Comment for created types" context="typecomment_context" enabled="true" deleted="false">/**
+ * &lt;p&gt;
+ * TODO
+ * &lt;/p&gt;
+ *
+ * @since ivata groupware 0.10 (${date})
+ * @author Colin MacLeod &lt;colin.macleod@ivata.com&gt;
+ * @version $$Revision: 1.2 $$
+ */
+</template><template id="org.eclipse.jdt.ui.text.codetemplates.fieldcomment" name="fieldcomment" description="Comment for fields" context="fieldcomment_context" enabled="true" deleted="false">/**
+ * Comment for &lt;code&gt;${field}&lt;/code&gt;
+ */</template><template id="org.eclipse.jdt.ui.text.codetemplates.methodcomment" name="methodcomment" description="Comment for non-overriding methods" context="methodcomment_context" enabled="true" deleted="false">/**
+ * ${tags}
+ */</template><template id="org.eclipse.jdt.ui.text.codetemplates.overridecomment" name="overridecomment" description="Comment for overriding methods" context="overridecomment_context" enabled="true" deleted="false">/**
+ * Refer to {@link }.
+ * ${see_to_overridden}
+ * ${tags}
+ */</template><template id="org.eclipse.jdt.ui.text.codetemplates.newtype" name="newtype" description="Newly created files" context="newtype_context" enabled="true" deleted="false">/*
+ * Copyright (c) 2001 - 2005 ivata limited.
+ * All rights reserved.
+ * ---------------------------------------------------------
+ * ivata groupware may be redistributed under the GNU General Public
+ * License as published by the Free Software Foundation;
+ * version 2 of the License.
+ *
+ * These programs are free software; you can redistribute them and/or
+ * modify them under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; version 2 of the License.
+ *
+ * These programs are distributed in the hope that they will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * See the GNU General Public License in the file LICENSE.txt for more
+ * details.
+ *
+ * If you would like a copy of the GNU General Public License write to
+ *
+ * Free Software Foundation, Inc.
+ * 59 Temple Place - Suite 330
+ * Boston, MA 02111-1307, USA.
+ *
+ *
+ * To arrange commercial support and licensing, contact ivata at
+ *                  http://www.ivata.com/contact.jsp
+ * ---------------------------------------------------------
+ * $$Log: codeTemplates.xml,v $
+ * $Revision 1.2  2005/04/09 17:19:14  colinmacleod
+ * $Changed copyright text to GPL v2 explicitly.
+ * $
+ * $Revision 1.1.1.1  2005/03/10 17:50:12  colinmacleod
+ * $Restructured ivata op around Hibernate/PicoContainer.
+ * $Renamed ivata groupware.
+ * $$
+ * ---------------------------------------------------------
+ */
+${package_declaration}
+
+${typecomment}
+${type_declaration}</template><template id="org.eclipse.jdt.ui.text.codetemplates.catchblock" name="catchblock" description="Code in new catch blocks" context="catchblock_context" enabled="true" deleted="false">// ${todo} Auto-generated catch block
+${exception_var}.printStackTrace();</template><template id="org.eclipse.jdt.ui.text.codetemplates.methodbody" name="methodbody" description="Code in created method stubs" context="methodbody_context" enabled="true" deleted="false">// ${todo} Auto-generated method stub
+${body_statement}</template><template id="org.eclipse.jdt.ui.text.codetemplates.constructorbody" name="constructorbody" description="Code in created constructor stubs" context="constructorbody_context" enabled="true" deleted="false">${body_statement}
+// ${todo} Auto-generated constructor stub</template><template id="org.eclipse.jdt.ui.text.codetemplates.getterbody" name="getterbody" description="Code in created getters" context="getterbody_context" enabled="true" deleted="false">return ${field};</template><template id="org.eclipse.jdt.ui.text.codetemplates.setterbody" name="setterbody" description="Code in created setters" context="setterbody_context" enabled="true" deleted="false">${field} = ${param};</template></templates>

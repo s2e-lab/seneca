@@ -1,0 +1,3 @@
+MemberOf,MethodName,ParametersList,Return Type,DangerousRange
+Ljavax/naming/InitialContext,lookup,Ljavax/naming/Name;,Ljava/lang/Object;,1
+Ljavax/naming/Context,lookup,Ljavax/naming/Name;,Ljava/lang/Object;,1

@@ -1,0 +1,34 @@
+STATEMENT PATH #1.1
+    Node#13 PoolBackedDataSourceBase.readObject(ObjectInputStream)@Everywhere
+        METHOD_ENTRY:Node: < Application, Lcom/mchange/v2/c3p0/impl/PoolBackedDataSourceBase, readObject(Ljava/io/ObjectInputStream;)V > Context: Everywhere
+         [iindex=31]conditional branch(eq, to iindex=36) v31,v20:#0
+         [iindex=34]v34 = invokeinterface < Application, Lcom/mchange/v2/ser/IndirectlySerialized, getObject()Ljava/lang/Object; > v32 @81 exception:v33
+    Node#2488 ReferenceIndirector$ReferenceSerialized.getObject()@CallStringContext: [ com.mchange.v2.c3p0.impl.PoolBackedDataSourceBase.readObject(Ljava/io/ObjectInputStream;)V@81 ]
+        METHOD_ENTRY:Node: < Extension, Lcom/mchange/v2/naming/ReferenceIndirector$ReferenceSerialized, getObject()Ljava/lang/Object; > Context: CallStringContext: [ com.mchange.v2.c3p0.impl.PoolBackedDataSourceBase.readObject(Ljava/io/ObjectInputStream;)V@81 ]
+         [iindex=20]conditional branch(eq, to iindex=27) v11,v4:#null
+         [iindex=24]v14 = invokeinterface < Extension, Ljavax/naming/Context, lookup(Ljavax/naming/Name;)Ljava/lang/Object; > v10,v12 @44 exception:v13
+PATH CONSTRAINTS
+TYPE CONSTRAINTS
+    [false] conditional branch(eq, to iindex=36) v31,v20:#0 Node:PoolBackedDataSourceBase.readObject(ObjectInputStream)
+    [true] type(v32) = Lcom/mchange/v2/naming/ReferenceIndirector$ReferenceSerialized
+    [false] conditional branch(eq, to iindex=27) v11,v4:#null   Node:ReferenceIndirector$ReferenceSerialized.getObject()
+    [true] type(v10) = Ljavax/naming/InitialContext
+----------------------------------------------------------------------------------------------------
+STATEMENT PATH #2.1
+    Node#13 PoolBackedDataSourceBase.readObject(ObjectInputStream)@Everywhere
+        METHOD_ENTRY:Node: < Application, Lcom/mchange/v2/c3p0/impl/PoolBackedDataSourceBase, readObject(Ljava/io/ObjectInputStream;)V > Context: Everywhere
+         [iindex=11]conditional branch(eq, to iindex=16) v19,v20:#0
+         [iindex=14]v23 = invokeinterface < Application, Lcom/mchange/v2/ser/IndirectlySerialized, getObject()Ljava/lang/Object; > v21 @40 exception:v22
+    Node#2487 ReferenceIndirector$ReferenceSerialized.getObject()@CallStringContext: [ com.mchange.v2.c3p0.impl.PoolBackedDataSourceBase.readObject(Ljava/io/ObjectInputStream;)V@40 ]
+        METHOD_ENTRY:Node: < Extension, Lcom/mchange/v2/naming/ReferenceIndirector$ReferenceSerialized, getObject()Ljava/lang/Object; > Context: CallStringContext: [ com.mchange.v2.c3p0.impl.PoolBackedDataSourceBase.readObject(Ljava/io/ObjectInputStream;)V@40 ]
+         [iindex=20]conditional branch(eq, to iindex=27) v11,v4:#null
+         [iindex=24]v14 = invokeinterface < Extension, Ljavax/naming/Context, lookup(Ljavax/naming/Name;)Ljava/lang/Object; > v10,v12 @44 exception:v13
+PATH CONSTRAINTS
+TYPE CONSTRAINTS
+    [false] conditional branch(eq, to iindex=16) v19,v20:#0 Node:PoolBackedDataSourceBase.readObject(ObjectInputStream)
+    [true] type(v21) = Lcom/mchange/v2/naming/ReferenceIndirector$ReferenceSerialized
+    [false] conditional branch(eq, to iindex=27) v11,v4:#null   Node:ReferenceIndirector$ReferenceSerialized.getObject()
+    [true] type(v10) = Ljavax/naming/InitialContext
+----------------------------------------------------------------------------------------------------
+Found 1 path(s) for sink NORMAL getObject:14 = invokeinterface < Extension, Ljavax/naming/Context, lookup(Ljavax/naming/Name;)Ljava/lang/Object; > 10,12 @44 exception:13 Node: < Extension, Lcom/mchange/v2/naming/ReferenceIndirector$ReferenceSerialized, getObject()Ljava/lang/Object; > Context: CallStringContext: [ com.mchange.v2.c3p0.impl.PoolBackedDataSourceBase.readObject(Ljava/io/ObjectInputStream;)V@40 ]
+Found 1 path(s) for sink NORMAL getObject:14 = invokeinterface < Extension, Ljavax/naming/Context, lookup(Ljavax/naming/Name;)Ljava/lang/Object; > 10,12 @44 exception:13 Node: < Extension, Lcom/mchange/v2/naming/ReferenceIndirector$ReferenceSerialized, getObject()Ljava/lang/Object; > Context: CallStringContext: [ com.mchange.v2.c3p0.impl.PoolBackedDataSourceBase.readObject(Ljava/io/ObjectInputStream;)V@81 ]

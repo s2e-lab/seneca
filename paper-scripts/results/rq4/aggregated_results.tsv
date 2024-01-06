@@ -1,0 +1,141 @@
+Groovy1	SALSA	1-CFA	0	
+FileUpload1	SALSA	1-CFA	0	
+CommonsCollections7	SALSA	1-CFA	0	
+BeanShell1	SENECA	0-1-CFA	0	
+Jython1	SALSA	0-1-CFA	0	
+FileUpload1	SENECA	0-1-CFA	6	java.io.OutputStream.<init>()V
+FileUpload1	SENECA	0-1-CFA	7	java.io.OutputStream.<init>()V
+FileUpload1	SENECA	0-1-CFA	7	java.io.OutputStream.<init>()V
+FileUpload1	SENECA	0-1-CFA	10	java.io.OutputStream.<init>()V
+FileUpload1	SENECA	0-1-CFA	2	java.io.File.delete()Z
+FileUpload1	SENECA	0-1-CFA	5	java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
+FileUpload1	SENECA	0-1-CFA	8	java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
+FileUpload1	SENECA	0-1-CFA	5	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+FileUpload1	SENECA	0-1-CFA	8	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+FileUpload1	SENECA	0-1-CFA	6	java.io.FileOutputStream.write([BII)V
+FileUpload1	SENECA	0-1-CFA	9	java.io.FileOutputStream.write([BII)V
+FileUpload1	SENECA	0-1-CFA	3	java.io.OutputStream.write([B)V
+FileUpload1	SENECA	0-1-CFA	3	java.io.FileOutputStream.write([B)V
+FileUpload1	SENECA	0-1-CFA	6	java.io.FileOutputStream.write([BII)V
+CommonsBeanutils1	SENECA	0-1-CFA	0	
+ROME	SALSA	1-CFA	0	
+Vaadin1	SENECA	0-1-CFA	5	java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+Vaadin1	SENECA	0-1-CFA	8	java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+Vaadin1	SENECA	0-1-CFA	8	java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+Vaadin1	SENECA	0-1-CFA	8	java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+CommonsCollections5	SENECA	0-1-CFA	0	
+CommonsCollections7	SALSA	0-1-CFA	0	
+BeanShell1	SALSA	0-1-CFA	0	
+CommonsCollections3	SENECA	0-1-CFA	0	
+CommonsBeanutils1	SALSA	1-CFA	0	
+CommonsCollections1	SENECA	1-CFA	0	
+Click1	SALSA	0-1-CFA	0	
+Click1	SALSA	1-CFA	0	
+Click1	SENECA	0-1-CFA	0	
+Spring1	SALSA	0-1-CFA	0	
+BeanShell1	SALSA	1-CFA	0	
+CommonsCollections3	SALSA	1-CFA	0	
+Wicket1	SALSA	0-1-CFA	0	
+Spring2	SENECA	0-1-CFA	0	
+CommonsCollections7	SENECA	1-CFA	0	
+CommonsCollections6	SALSA	1-CFA	0	
+CommonsCollections1	SALSA	0-1-CFA	0	
+ROME	SALSA	0-1-CFA	0	
+C3P0	SALSA	0-1-CFA	0	
+CommonsCollections2	SENECA	0-1-CFA	0	
+Wicket1	SALSA	1-CFA	0	
+CommonsCollections6	SALSA	0-1-CFA	0	
+AspectJWeaver	SENECA	0-1-CFA	0	
+Spring1	SALSA	1-CFA	0	
+CommonsCollections5	SENECA	1-CFA	0	
+Spring1	SENECA	0-1-CFA	0	
+Vaadin1	SALSA	0-1-CFA	0	
+BeanShell1	SENECA	1-CFA	0	
+Wicket1	SENECA	0-1-CFA	5	java.io.OutputStream.<init>()V
+Wicket1	SENECA	0-1-CFA	6	java.io.OutputStream.<init>()V
+Wicket1	SENECA	0-1-CFA	7	java.io.OutputStream.<init>()V
+Wicket1	SENECA	0-1-CFA	9	java.io.OutputStream.<init>()V
+Wicket1	SENECA	0-1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	0-1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	0-1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	0-1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	0-1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	0-1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	0-1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	0-1-CFA	5	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+Wicket1	SENECA	0-1-CFA	7	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+Wicket1	SENECA	0-1-CFA	5	java.io.FileOutputStream.write([B)V
+Wicket1	SENECA	0-1-CFA	7	java.io.FileOutputStream.write([B)V
+Wicket1	SENECA	0-1-CFA	7	java.io.File.createNewFile()Z
+Wicket1	SENECA	0-1-CFA	9	java.io.File.createNewFile()Z
+Wicket1	SENECA	0-1-CFA	3	java.io.OutputStream.write([B)V
+Wicket1	SENECA	0-1-CFA	3	java.io.FileOutputStream.write([B)V
+Wicket1	SENECA	0-1-CFA	5	java.io.FileOutputStream.write([BII)V
+AspectJWeaver	SALSA	0-1-CFA	0	
+CommonsBeanutils1	SALSA	0-1-CFA	0	
+CommonsCollections5	SALSA	0-1-CFA	0	
+Wicket1	SENECA	1-CFA	5	java.io.OutputStream.<init>()V
+Wicket1	SENECA	1-CFA	6	java.io.OutputStream.<init>()V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	7	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	8	java.io.PrintStream.println(Ljava/lang/String;)V
+Wicket1	SENECA	1-CFA	5	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+Wicket1	SENECA	1-CFA	7	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+Wicket1	SENECA	1-CFA	5	java.io.FileOutputStream.write([B)V
+Wicket1	SENECA	1-CFA	7	java.io.FileOutputStream.write([B)V
+Wicket1	SENECA	1-CFA	7	java.io.File.createNewFile()Z
+Wicket1	SENECA	1-CFA	9	java.io.File.createNewFile()Z
+Wicket1	SENECA	1-CFA	3	java.io.OutputStream.write([B)V
+Wicket1	SENECA	1-CFA	3	java.io.FileOutputStream.write([B)V
+Wicket1	SENECA	1-CFA	5	java.io.FileOutputStream.write([BII)V
+CommonsCollections5	SALSA	1-CFA	0	
+CommonsCollections7	SENECA	0-1-CFA	0	
+CommonsCollections6	SENECA	1-CFA	0	
+CommonsCollections1	SENECA	0-1-CFA	0	
+CommonsBeanutils1	SENECA	1-CFA	0	
+ROME	SENECA	1-CFA	0	
+FileUpload1	SENECA	1-CFA	2	java.io.File.delete()Z
+FileUpload1	SENECA	1-CFA	6	java.io.OutputStream.<init>()V
+FileUpload1	SENECA	1-CFA	7	java.io.OutputStream.<init>()V
+FileUpload1	SENECA	1-CFA	5	java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
+FileUpload1	SENECA	1-CFA	8	java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
+FileUpload1	SENECA	1-CFA	5	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+FileUpload1	SENECA	1-CFA	8	java.io.FileOutputStream.<init>(Ljava/io/File;)V
+FileUpload1	SENECA	1-CFA	6	java.io.FileOutputStream.write([BII)V
+FileUpload1	SENECA	1-CFA	9	java.io.FileOutputStream.write([BII)V
+FileUpload1	SENECA	1-CFA	3	java.io.OutputStream.write([B)V
+FileUpload1	SENECA	1-CFA	3	java.io.FileOutputStream.write([B)V
+FileUpload1	SENECA	1-CFA	6	java.io.FileOutputStream.write([BII)V
+ROME	SENECA	0-1-CFA	0	
+C3P0	SENECA	0-1-CFA	0	
+Vaadin1	SALSA	1-CFA	0	
+CommonsCollections3	SALSA	0-1-CFA	0	
+Jython1	SALSA	1-CFA	0	
+CommonsCollections1	SALSA	1-CFA	0	
+FileUpload1	SALSA	0-1-CFA	0	
+CommonsCollections3	SENECA	1-CFA	0	
+Groovy1	SALSA	0-1-CFA	0	
+CommonsCollections6	SENECA	0-1-CFA	0	
+Click1	SENECA	1-CFA	0	
+C3P0	SALSA	1-CFA	0	
+AspectJWeaver	SALSA	1-CFA	0	

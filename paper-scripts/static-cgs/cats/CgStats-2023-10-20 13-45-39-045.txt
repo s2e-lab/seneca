@@ -1,0 +1,19 @@
+ProjectName	TestCase	ApproachName	Policy	# Nodes	#Edges
+Salsa	Ser3	0-1-CFA	772	1528
+Salsa	Ser3	1-CFA	1877	3539
+Salsa	Ser9	0-1-CFA	724	1325
+Salsa	Ser9	1-CFA	1592	2843
+Salsa	Ser1	0-1-CFA	771	1527
+Salsa	Ser1	1-CFA	1876	3538
+Salsa	Ser2	0-1-CFA	772	1529
+Salsa	Ser2	1-CFA	1878	3540
+Salsa	Ser7	0-1-CFA	722	1323
+Salsa	Ser7	1-CFA	1590	2841
+Salsa	Ser8	0-1-CFA	729	1333
+Salsa	Ser8	1-CFA	1601	2855
+Salsa	Ser4	0-1-CFA	722	1323
+Salsa	Ser4	1-CFA	1590	2841
+Salsa	Ser5	0-1-CFA	722	1323
+Salsa	Ser5	1-CFA	1590	2841
+Salsa	Ser6	0-1-CFA	546	940
+Salsa	Ser6	1-CFA	1068	1718

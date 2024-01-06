@@ -1,0 +1,22 @@
+digraph G {
+	rankdir=LR
+	graph[label="Ser1 (Seneca 0-1-CFA)"];
+	node[style=filled,fillcolor ="white",shape=box,margin=0.02,width=0,height=0];
+	N4[label=<[N4] Object.<init>()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N5[label=<[N5] Demo.main(String[])\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N8[label=<[N8] Demo.<init>()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N10[label=<[N10] FileOutputStream.<init>(String)\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N12[label=<[N12] ObjectOutputStream.<init>(OutputStream)\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N14[label=<[N14] ObjectOutputStream.writeObject(Object)\n<FONT POINT-SIZE="10pt">CallSiteContext: N5 @ 29</FONT>>fillcolor=none,color=gray,shape=rectangle,style=dashed];
+	N15[label=<[N15] ObjectOutputStream.close()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N545[label=<[N545] Demo.writeObject(ObjectOutputStream)\n<FONT POINT-SIZE="10pt">CallStringContext: [ ObjectOutputStream.writeObject(Object)@1 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N546[label=<[N546] ObjectOutputStream.defaultWriteObject()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N5 -> N8;
+	N5 -> N10;
+	N5 -> N12;
+	N5 -> N14;
+	N5 -> N15;
+	N8 -> N4;
+	N14 -> N545;
+	N545 -> N546;
+}

@@ -1,0 +1,24 @@
+digraph G {
+	rankdir=LR
+	graph[label="Ser3 (Seneca 0-1-CFA)"];
+	node[style=filled,fillcolor ="white",shape=box,margin=0.02,width=0,height=0];
+	N4[label=<[N4] Object.<init>()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N5[label=<[N5] Demo.main(String[])\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N8[label=<[N8] Demo.<init>()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N9[label=<[N9] Demo.serialize(Object)\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N12[label=<[N12] FileOutputStream.<init>(String)\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N14[label=<[N14] ObjectOutputStream.<init>(OutputStream)\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N16[label=<[N16] ObjectOutputStream.writeObject(Object)\n<FONT POINT-SIZE="10pt">CallSiteContext: N9 @ 21</FONT>>fillcolor=none,color=gray,shape=rectangle,style=dashed];
+	N17[label=<[N17] ObjectOutputStream.close()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N546[label=<[N546] Demo.writeObject(ObjectOutputStream)\n<FONT POINT-SIZE="10pt">CallStringContext: [ ObjectOutputStream.writeObject(Object)@1 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N547[label=<[N547] ObjectOutputStream.defaultWriteObject()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N5 -> N8;
+	N5 -> N9;
+	N8 -> N4;
+	N9 -> N12;
+	N9 -> N14;
+	N9 -> N16;
+	N9 -> N17;
+	N16 -> N546;
+	N546 -> N547;
+}

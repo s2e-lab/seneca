@@ -1,0 +1,2 @@
+MemberOf,MethodName,ParametersList,Return Type,DangerousRange
+Lcom/mchange/v2/naming/ReferenceableUtils,referenceToObject,Ljavax/naming/Reference;Ljavax/naming/Name;Ljavax/naming/Context;Ljava/util/Hashtable;,Ljava/lang/Object;,1

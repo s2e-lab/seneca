@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.hamcrest</groupId>
+  <artifactId>hamcrest-all</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+  <name>Hamcrest All</name>
+  <url>http://code.google.com/p/hamcrest</url>
+  <description>Hamcrest All</description>
+  <licenses>
+    <license>
+      <name>BSD Licence</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>http://hamcrest.googlecode.com/svn</url>
+  </scm>
+</project>

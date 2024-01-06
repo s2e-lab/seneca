@@ -1,0 +1,26 @@
+digraph G {
+	rankdir=LR
+	graph[label="Ser2 (Salsa 1-CFA)"];
+	node[style=filled,fillcolor ="white",shape=box,margin=0.02,width=0,height=0];
+	N5[label=<[N5] Demo.main(String[])\n<FONT POINT-SIZE="10pt">CallStringContext: [ FakeRootClass.fakeRootMethod()@5 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N8[label=<[N8] Demo.<init>()\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@9 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N9[label=<[N9] AnotherSerializableClass.<init>()\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@20 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N11[label=<[N11] FileOutputStream.<init>(String)\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@30 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N13[label=<[N13] ObjectOutputStream.<init>(OutputStream)\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@39 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N15[label=<[N15] ObjectOutputStream.writeObject(Object)\n<FONT POINT-SIZE="10pt">CallSiteContext: N5 @ 45</FONT>>fillcolor=none,color=gray,shape=rectangle,style=dashed];
+	N16[label=<[N16] ObjectOutputStream.close()\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@49 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N18[label=<[N18] Object.<init>()\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.<init>()@1 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N19[label=<[N19] Object.<init>()\n<FONT POINT-SIZE="10pt">CallStringContext: [ AnotherSerializableClass.<init>()@1 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N1069[label=<[N1069] Demo.writeObject(ObjectOutputStream)\n<FONT POINT-SIZE="10pt">CallStringContext: [ ObjectOutputStream.writeObject(Object)@1 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N1070[label=<[N1070] ObjectOutputStream.defaultWriteObject()\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.writeObject(ObjectOutputStream)@1 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N5 -> N8;
+	N5 -> N9;
+	N5 -> N11;
+	N5 -> N13;
+	N5 -> N15;
+	N5 -> N16;
+	N8 -> N18;
+	N9 -> N19;
+	N15 -> N1069;
+	N1069 -> N1070;
+}

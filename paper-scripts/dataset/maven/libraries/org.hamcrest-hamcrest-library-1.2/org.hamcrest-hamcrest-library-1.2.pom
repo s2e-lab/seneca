@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+	<!--
+		| This POM builds hamcrest core. | | There are some key informations
+		to know about the generated classes: | Upon building a class named
+		"BaseMatchers" will be generated. This will take place after compiling
+		all classes. | So be sure to class "mvn package", not only "mvn
+		compile". | Do not use clean target with other targets. "mvn clean
+		package" will result in a package without the generated class. |
+		Instead call "mvn clean" and "mvn package" seperately. | | Some notes
+		for installing, releasing, deploying: | Be sure to generate source and
+		javadoc jars AFTER packaging to contain the generated class. | Call
+		"mvn clean" and "mvn package source:jar javadoc:jar". | To generate a
+		bundle for uploading to the central maven repository you have to split
+		the packaging. This prevents the | generation of the class after
+		signing the jar what would break the integrity of the signed archive:
+		| Call "mvn clean", "mvn package source:jar javadoc:jar" and "mvn
+		package source:jar javadoc:jar gpg:sign repository:bundle-create"
+	-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.hamcrest</groupId>
+	<artifactId>hamcrest-library</artifactId>
+	<version>1.2</version>
+	<packaging>jar</packaging>
+
+	<name>Hamcrest library</name>
+	<description>Hamcrest library of matcher implementations.</description>
+
+	<url>http://code.google.com/p/hamcrest/</url>
+
+	<licenses>
+		<license>
+			<name>New BSD License</name>
+			<url>http://www.opensource.org/licenses/bsd-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>http://code.google.com/p/hamcrest/source/browse/</url>
+		<connection>http://hamcrest.googlecode.com/svn/trunk/hamcrest-library</connection>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+
+		<resources>
+			<resource>
+				<directory>..</directory>
+				<includes>
+					<include>LICENSE.txt</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>target/generated-sources</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>generate-sources</id>
+			<activation>
+				<file>
+					<missing>target/generated-sources/org/hamcrest</missing>
+				</file>
+			</activation>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>java</goal>
+								</goals>
+								<phase>process-classes</phase>
+							</execution>
+						</executions>
+						<configuration>
+							<includeProjectDependencies>true</includeProjectDependencies>
+							<includePluginDependencies>true</includePluginDependencies>
+							<mainClass>org.hamcrest.generator.config.XmlConfigurator</mainClass>
+							<arguments>
+								<argument>../matchers.xml</argument>
+								<argument>../hamcrest-core/src/main/java,src/main/java</argument>
+								<argument>org.hamcrest.Matchers</argument>
+								<argument>target/generated-sources</argument>
+							</arguments>
+						</configuration>
+						<dependencies>
+							<dependency>
+								<groupId>org.hamcrest</groupId>
+								<artifactId>hamcrest-generator</artifactId>
+								<version>${project.version}</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>initialize</id>
+								<phase>initialize</phase>
+								<configuration>
+									<target>
+										<mkdir dir="target/generated-sources" />
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>compile-generated-sources</id>
+								<phase>process-classes</phase>
+								<configuration>
+									<target>
+										<property name="maven_classpath" refid="maven.compile.classpath" />
+										<javac srcdir="target/generated-sources" destdir="target/classes">
+											<classpath>
+												<pathelement path="${maven_classpath}" />
+											</classpath>
+										</javac>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

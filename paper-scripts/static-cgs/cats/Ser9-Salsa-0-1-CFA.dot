@@ -1,0 +1,26 @@
+digraph G {
+	rankdir=LR
+	graph[label="Ser9 (Salsa 0-1-CFA)"];
+	node[style=filled,fillcolor ="white",shape=box,margin=0.02,width=0,height=0];
+	N4[label=<[N4] Object.<init>()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N5[label=<[N5] Demo.main(String[])\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N9[label=<[N9] FileInputStream.<init>(String)\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N11[label=<[N11] ObjectInputStream.<init>(InputStream)\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N13[label=<[N13] ObjectInputStream.readObject()\n<FONT POINT-SIZE="10pt">CallSiteContext: N5 @ 20</FONT>>fillcolor=none,color=gray,shape=rectangle,style=dashed];
+	N14[label=<[N14] ObjectInputStream.close()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=peachpuff,color=salmon2];
+	N720[label=<[N720] Demo.<init>()\n<FONT POINT-SIZE="10pt">CallStringContext: [ ObjectInputStream.readObject()@1 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N721[label=<[N721] Demo.readObject(ObjectInputStream)\n<FONT POINT-SIZE="10pt">CallStringContext: [ ObjectInputStream.readObject()@2 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N722[label=<[N722] Superclass.<init>()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N724[label=<[N724] ObjectInputStream.defaultReadObject()\n<FONT POINT-SIZE="10pt">CallSiteContext: N721 @ 1</FONT>>fillcolor=none,color=gray,shape=rectangle,style=dashed];
+	N725[label=<[N725] Superclass.callback()\n<FONT POINT-SIZE="10pt">Context: Ø</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N5 -> N9;
+	N5 -> N11;
+	N5 -> N13;
+	N5 -> N14;
+	N13 -> N720;
+	N13 -> N721;
+	N720 -> N722;
+	N721 -> N724;
+	N722 -> N4;
+	N722 -> N725;
+}

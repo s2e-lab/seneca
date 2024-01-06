@@ -1,0 +1,11 @@
+Ser1	S
+Ser2	S
+Ser3	U
+Ser4	U
+Ser5	S
+Ser6	U
+Ser7	S
+Ser8	U
+Ser9	S
+SerLam1	U
+SerLam2	U

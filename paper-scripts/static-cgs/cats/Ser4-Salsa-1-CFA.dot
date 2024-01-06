@@ -1,0 +1,22 @@
+digraph G {
+	rankdir=LR
+	graph[label="Ser4 (Salsa 1-CFA)"];
+	node[style=filled,fillcolor ="white",shape=box,margin=0.02,width=0,height=0];
+	N5[label=<[N5] Demo.main(String[])\n<FONT POINT-SIZE="10pt">CallStringContext: [ FakeRootClass.fakeRootMethod()@5 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N9[label=<[N9] FileInputStream.<init>(String)\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@6 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N11[label=<[N11] ObjectInputStream.<init>(InputStream)\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@15 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N13[label=<[N13] ObjectInputStream.readObject()\n<FONT POINT-SIZE="10pt">CallSiteContext: N5 @ 20</FONT>>fillcolor=none,color=gray,shape=rectangle,style=dashed];
+	N14[label=<[N14] ObjectInputStream.close()\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.main(String[])@25 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N1587[label=<[N1587] Demo.<init>()\n<FONT POINT-SIZE="10pt">CallStringContext: [ ObjectInputStream.readObject()@1 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N1588[label=<[N1588] Demo.readObject(ObjectInputStream)\n<FONT POINT-SIZE="10pt">CallStringContext: [ ObjectInputStream.readObject()@2 ]</FONT>>fillcolor=palegreen,color=darkseagreen];
+	N1589[label=<[N1589] Object.<init>()\n<FONT POINT-SIZE="10pt">CallStringContext: [ Demo.<init>()@1 ]</FONT>>fillcolor=peachpuff,color=salmon2];
+	N1591[label=<[N1591] ObjectInputStream.defaultReadObject()\n<FONT POINT-SIZE="10pt">CallSiteContext: N1588 @ 1</FONT>>fillcolor=none,color=gray,shape=rectangle,style=dashed];
+	N5 -> N9;
+	N5 -> N11;
+	N5 -> N13;
+	N5 -> N14;
+	N13 -> N1587;
+	N13 -> N1588;
+	N1587 -> N1589;
+	N1588 -> N1591;
+}

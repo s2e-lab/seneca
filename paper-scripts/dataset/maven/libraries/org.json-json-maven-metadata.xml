@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.json</groupId>
+  <artifactId>json</artifactId>
+  <versioning>
+    <latest>20230618</latest>
+    <release>20230618</release>
+    <versions>
+      <version>20070829</version>
+      <version>20080701</version>
+      <version>20090211</version>
+      <version>20131018</version>
+      <version>20140107</version>
+      <version>20141113</version>
+      <version>20150729</version>
+      <version>20151123</version>
+      <version>20160212</version>
+      <version>20160807</version>
+      <version>20160810</version>
+      <version>20170516</version>
+      <version>20171018</version>
+      <version>20180130</version>
+      <version>20180813</version>
+      <version>20190722</version>
+      <version>20200518</version>
+      <version>20201115</version>
+      <version>20210307</version>
+      <version>20211205</version>
+      <version>20220320</version>
+      <version>20220924</version>
+      <version>20230227</version>
+      <version>20230618</version>
+    </versions>
+    <lastUpdated>20230618180351</lastUpdated>
+  </versioning>
+</metadata>

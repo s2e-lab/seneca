@@ -1,0 +1,8 @@
+Dependencies for JPF libraries:
+
+commons-logging.jar
+  - required for jpf.jar
+  - required for jpf-tools.jar
+
+jxp.jar
+  - required for jpf-tools.jar (doc generation utilities)

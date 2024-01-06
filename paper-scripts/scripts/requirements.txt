@@ -1,0 +1,5 @@
+kaitaistruct==0.10
+beautifulsoup4==4.12.2
+matplotlib==3.7.2
+matplotlib-venn==0.11.9
+javalang==0.13.0

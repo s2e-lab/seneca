@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.scalatest</groupId>
+  <artifactId>scalatest</artifactId>
+  <version>0.9.5</version>
+  <packaging>jar</packaging>
+  <name>ScalaTest</name>
+  <url>http://www.artima.com/scalatest/</url>
+  <description>ScalaTest is a free, open-source testing toolkit for Scala and Java programmers.</description>
+  <licenses>
+    <license>
+      <name>the Apache License, ASL Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <inceptionYear>2009</inceptionYear>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.7.3</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <distributionManagement>
+    <repository>
+      <id>scala-tools.org</id>
+      <url>
+      http://nexus.scala-tools.org/content/repositories/releases/</url>
+    </repository>
+
+    <snapshotRepository>
+      <id>scala-tools.org</id>
+      <url>
+      http://nexus.scala-tools.org/content/repositories/snapshots/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
+</project>

@@ -1,4 +1,4 @@
-# SENECA: Serialization-aware Call Graph Construction for Java Applications
+# SENECA: Taint-Based Call Graph Construction for Java Object Deserialization
 
 This repository contains the source code for `Seneca`, a taint-based call graph construction for Java programs. This tool is part of the following paper:
 
@@ -32,21 +32,22 @@ This repository has two folders:
 
 
 
-## Using Seneca 
+## Using Seneca (`seneca-src`)
 
 
 ### Requirements
 - Java 8 (and above)
 - Maven (3.8+) 
-(The code was tested with Java 11 and Maven 3.8.7)
 
+The code was tested with Java 11 and Maven 3.8.7 on macOS Monterey with 32 GB  of memory.
 
-### Running Seneca using Docker
 
 
 ### Running Seneca using Java directly (through its Command Line Interface)
 
-Seneca has a command line interface that can be used as follows:
+The code has been compiled using Java 11 with all of its dependencies and it is located on this artifact's root folder (file: `seneca.jar`).
+
+`Seneca` has a command line interface that can be used as follows:
 
 ```
 java -jar seneca.jar <parameters>
@@ -58,37 +59,62 @@ java -jar seneca.jar <parameters>
  -f,--format <arg>          Output format (possible values: dot, jdyn). JDyn is a custom format that saves the call graph as tuples (caller, callee)
  -j,--jar <arg>             Path to the project's JAR file 
  -o,--output <arg>          Path to the output file with the serialized call graph
- -pta,--main-policy <arg>   Pointer analysis choice (n-CFA, 0-n-CFA, 0-n-Container-CFA)
+ -pta,--main-policy <arg>   Pointer analysis choice (n-CFA, 0-n-CFA)
 ```
 
 **Optional Parameters:**
 
 ```
- -e,--exclusions <arg>      Path to the exclusions file 
+ -e,--exclusions <arg>      Path to an exclusions file
     --view-ui               Shows call graph in a Java Swing UI
     --print-models          Prints to the console all the synthetic methods created
 ```
 
 
 
-**SAMPLE USAGE:**
+***Sample Usage using the provided compiled JAR:***
 
-The command below will generate a call graph for the program example in the paper (**Listing 3**) using `0-1-CFA` as the pointer analysis policy. The call graph is serialized into the DOT format saved on the file `OOPSLAPaperExample.dot`.
+The command below will generate a call graph for the program example in the paper (**Listing 3**) using `0-1-CFA` as the pointer analysis policy. The call graph is serialized into the DOT format saved on the file `OOPSLAPaperExample.dot` and it will also open a Window with the call graph.
 
 ```bash
 java -jar seneca.jar \
--j paper-scripts/dataset/sample-programs/OOPSLAPaperExample-JRE1.7.jar \
--f dot \
--o OOPSLAPaperExample.dot \
--pta 0-1-CFA \
---view-ui \
---print-models
-
+		-j paper-scripts/dataset/sample-programs/OOPSLAPaperExample-JRE1.7.jar \
+		-f dot \
+		-o OOPSLAPaperExample.dot \
+		-pta 0-1-CFA \
+		--view-ui
 ```
 
 
 
+### Running Seneca using Docker
+
+1. Build the docker image
+
+	```
+	docker build -t seneca .
+	```
+
+2. Run it using:
+
+	```
+	docker run -it --rm seneca <parameters>
+	```
+
+
+
+***Sample Usage using the Dockerfile***
+
+
+
+```bash
+docker run -it --rm seneca -j /usr/src/seneca/paper-scripts/dataset/sample-programs/OOPSLAPaperExample-JRE1.7.jar -f dot -o OOPSLAPaperExample.dot -pta 0-1-CFA 
+```
 
 
 
 ## Results Folder
+
+All the results presented in **Section 5** are located in the folder `paper-scripts`.
+The [README.md](paper-scripts/README.md) in that folder contains a detailed description of each file and how they related to the results for each research question.
+

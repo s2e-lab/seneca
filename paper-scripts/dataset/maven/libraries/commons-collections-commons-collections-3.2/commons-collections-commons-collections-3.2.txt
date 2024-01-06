@@ -1,0 +1,13 @@
+com/google/common/base/Equivalence$Wrapper.equals(Ljava/lang/Object;)Z (0)
+  com/google/common/base/Equivalence.equivalent(Ljava/lang/Object;Ljava/lang/Object;)Z (0)
+  com/google/common/base/FunctionalEquivalence.doEquivalent(Ljava/lang/Object;Ljava/lang/Object;)Z (0)
+  com/google/common/base/Functions$PredicateFunction.apply(Ljava/lang/Object;)Ljava/lang/Object; (0)
+  com/google/common/base/Functions$PredicateFunction.apply(Ljava/lang/Object;)Ljava/lang/Boolean; (0)
+  com/google/common/base/Predicates$AndPredicate.apply(Ljava/lang/Object;)Z (0)
+  org/apache/commons/collections/list/LazyList.get(I)Ljava/lang/Object; (0)
+  org/apache/commons/collections/list/TransformedList.set(ILjava/lang/Object;)Ljava/lang/Object; (0)
+  org/apache/commons/collections/list/TransformedList.set(ILjava/lang/Object;)Ljava/lang/Object; (2)
+  org/apache/commons/collections/collection/TransformedCollection.transform(Ljava/lang/Object;)Ljava/lang/Object; (1)
+  org/apache/commons/collections/functors/InvokerTransformer.transform(Ljava/lang/Object;)Ljava/lang/Object; (1)
+  java/lang/reflect/Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0)
+
