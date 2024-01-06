@@ -23,11 +23,10 @@ be visited).
 The technical details of how the approach perform these two phases is described in the **Section 3** of the paper.
 
 ## Artifact Details
-Since the artifact is too big to be attached (>22Gb), they are available to be downloaded in here:
+Since the artifact is too big to be attached (>22Gb), it is  available to be downloaded from Zenodo and GitHub:
 
 
-- Zenodo URL: https://dx.doi.org/ 10.5281/zenodo.10464130 
-
+- Zenodo URL: https://dx.doi.org/10.5281/zenodo.10464130
 - GitHub URL: https://github.com/s2e-lab/seneca 
 
 Please notice that since GitHub has repository size limitation, several compiled files were added to gitignore. Thus, instead of cloning the repository, it is better to download the zip file from Zenodo which will have all the results already and the tool already compiled into JAR files. Please refer to the README.md file on the root folder of the artifact.
@@ -38,8 +37,8 @@ Please notice that since GitHub has repository size limitation, several compiled
 
 This repository has two folders:
 
-- `paper-scripts`: scripts used to compute the results shown in the paper (Section 4).
-- `seneca-src`: the actual source code for seneca.
+- `paper-scripts`: scripts used to compute the results shown in the paper (**Section 5**).
+- `seneca-src`: the actual source code for seneca (technical details described in **Section 3**).
 
 
 
