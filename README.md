@@ -22,6 +22,17 @@ be visited).
 
 The technical details of how the approach perform these two phases is described in the **Section 3** of the paper.
 
+## Artifact Details
+Since the artifact is too big to be attached (>22Gb), they are available to be downloaded in here:
+
+
+- Zenodo URL: https://dx.doi.org/ 10.5281/zenodo.10464130 
+
+- GitHub URL: https://github.com/s2e-lab/seneca 
+
+Please notice that since GitHub has repository size limitation, several compiled files were added to gitignore. Thus, instead of cloning the repository, it is better to download the zip file from Zenodo which will have all the results already and the tool already compiled into JAR files. Please refer to the README.md file on the root folder of the artifact.
+
+
 
 ## Repository Structure
 
