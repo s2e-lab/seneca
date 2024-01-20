@@ -1,4 +1,4 @@
-package oopsla.evaluation;
+package oopsla.evaluation.utils;
 
 
 import com.ibm.wala.ipa.callgraph.CGNode;
@@ -6,7 +6,6 @@ import com.ibm.wala.ipa.callgraph.CallGraph;
 import com.ibm.wala.types.*;
 import com.ibm.wala.util.graph.traverse.DFSAllPathsFinder;
 import com.ibm.wala.util.strings.Atom;
-import org.junit.Assert;
 
 import java.util.List;
 import java.util.Set;
@@ -16,16 +15,19 @@ import java.util.Set;
  *
  * @author Joanna C. S. Santos jds5109@rit.edu
  */
-public class TestUtil {
+public class EvaluationUtil {
 
 
     // ============== Input Properties ==============
 
     // Program Property: -Dtestcase_folder=/path/to/testcases (e.g., -Dtestcase_folder=/Users/joanna/Documents/Portfolio/GitHub/joannacss/seneca-scripts/dataset/build/)
     public static final String TC_ROOT_FOLDER = System.getProperty("testcase_folder");
+
+
+    // ============== Output Properties ==============
     // Program Property: -Dstatic_cgs_folder=/path/to/where/static/call/graphs/should/be/saved (e.g., -Dstatic_cgs_folder=/Users/joanna/Documents/Portfolio/GitHub/joannacss/seneca-scripts/static-cgs)
     public static final String STATIC_CGS_FOLDER = System.getProperty("static_cgs_folder");
-    // Program Property: -Dvuln_paths_folder=/path/to/where/vulnerable/paths/should/be/saved (e.g., -Ddynamic_cgs_folder=/Users/joanna/Documents/Portfolio/GitHub/joannacss/seneca-scripts/results/rq4)
+    // Program Property: -Dvuln_paths_folder=/path/to/where/vulnerable/paths/should/be/saved (e.g., -Dvuln_paths_folder=/Users/joanna/Documents/Portfolio/GitHub/joannacss/seneca-scripts/results/rq4)
     public static final String VULN_PATHS_FOLDER = System.getProperty("vuln_paths_folder");
 
 
@@ -90,13 +92,18 @@ public class TestUtil {
      * @param cg   call graph
      * @param from method reference of the starting method
      * @param to   method reference of the ending method (target method)
+     * @throws RuntimeException if there is no direct call from n to x or if n or x are not in the call graph.
      */
     public static void checkDirectCall(CallGraph cg, MethodReference from, MethodReference to) {
         Set<CGNode> fromNodes = cg.getNodes(from);
         Set<CGNode> toNodes = cg.getNodes(to);
-        Assert.assertTrue("Missing " + from.getSignature() + " from call graph", fromNodes.size() != 0);
-        Assert.assertTrue("Missing " + to.getSignature() + " from call graph", toNodes.size() != 0);
-        Assert.assertTrue(cg.hasEdge(fromNodes.iterator().next(), toNodes.iterator().next()));
+
+        if (fromNodes.size() == 0)
+            throw new RuntimeException("Missing " + from.getSignature() + " from call graph");
+        if (toNodes.size() == 0)
+            throw new RuntimeException("Missing " + to.getSignature() + " from call graph");
+        if (!cg.hasEdge(fromNodes.iterator().next(), toNodes.iterator().next()))
+            throw new RuntimeException("Missing edge from " + from.getSignature() + " to " + to.getSignature());
     }
 
 

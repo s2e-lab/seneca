@@ -7,30 +7,34 @@ import com.ibm.wala.ipa.callgraph.CallGraphBuilderCancelException;
 import com.ibm.wala.ipa.cha.ClassHierarchyException;
 import edu.rit.se.design.callgraph.analysis.PointerAnalysisPolicy;
 import edu.rit.se.design.callgraph.cli.Salsa;
+import edu.rit.se.design.callgraph.cli.Seneca;
+import oopsla.evaluation.utils.EvaluationUtil;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.io.File;
 import java.io.IOException;
 
+public class RQ1SenecaCatsEval extends RQ1AbstractCatsEval {
 
-/**
- * Automated dynamic test for verifying edu.rit.se.design.callgraph.cli.Salsa's soundness with respect to deserialization features.
- *
- * @author Joanna C. S. Santos (jds5109@rit.edu)
- */
-public class RQ1SalsaCatsTest extends RQ1AbstractCatsTest {
-    protected RQ1SalsaCatsTest() {
-        super(TestUtil.CATS_STATIC_CGS_FOLDER, "Salsa");
+
+    protected RQ1SenecaCatsEval() {
+        super(EvaluationUtil.CATS_STATIC_CGS_FOLDER, "Seneca");
     }
 
     @Override
     protected CallGraph computeCallGraph(String sample, PointerAnalysisPolicy primaryPaPolicy) throws IOException, ClassHierarchyException, CallGraphBuilderCancelException {
-        File exclusions = new File(TestUtil.EXCLUSIONS_FILE);
+        File exclusions = new File(EvaluationUtil.EXCLUSIONS_FILE);
         // Basic Variables
         PointerAnalysisPolicy secondaryPolicy = new PointerAnalysisPolicy(PointerAnalysisPolicy.PolicyType.nCFA, 1);
-        Pair<CallGraphBuilder, AnalysisOptions> tuple = Salsa.getCallGraphBuilder(sample, exclusions, primaryPaPolicy, secondaryPolicy, null);
+        Pair<CallGraphBuilder, AnalysisOptions> tuple = Seneca.getCallGraphBuilder(sample, exclusions, primaryPaPolicy, secondaryPolicy, null);
         CallGraphBuilder builder = tuple.getLeft();
         AnalysisOptions options = tuple.getRight();
         return builder.makeCallGraph(options, null);
+    }
+
+
+    public static void main(String[] args) throws ClassHierarchyException, CallGraphBuilderCancelException, IOException {
+        RQ1SenecaCatsEval eval = new RQ1SenecaCatsEval();
+        eval.runCatsTests();
     }
 }

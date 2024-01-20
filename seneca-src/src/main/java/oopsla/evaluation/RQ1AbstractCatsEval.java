@@ -7,40 +7,39 @@ import com.ibm.wala.ipa.callgraph.CallGraphStats;
 import com.ibm.wala.ipa.cha.ClassHierarchyException;
 import com.ibm.wala.types.MethodReference;
 import edu.rit.se.design.callgraph.analysis.PointerAnalysisPolicy;
-import edu.rit.se.design.callgraph.evaluation.utils.TestUtilities;
 import edu.rit.se.design.callgraph.serializer.JavaCallGraphSerializer;
 import edu.rit.se.design.dodo.utils.viz.GraphVisualizer;
+import oopsla.evaluation.utils.EvaluationUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.TestFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.ibm.wala.types.ClassLoaderReference.Application;
 import static com.ibm.wala.types.ClassLoaderReference.Primordial;
 import static edu.rit.se.design.callgraph.analysis.PointerAnalysisPolicy.PolicyType.ZeroXCFA;
 import static edu.rit.se.design.callgraph.analysis.PointerAnalysisPolicy.PolicyType.nCFA;
-import static edu.rit.se.design.callgraph.evaluation.utils.CATSTestCases.*;
-import static edu.rit.se.design.callgraph.evaluation.utils.TestUtilities.checkDirectCall;
-import static edu.rit.se.design.callgraph.evaluation.utils.TestUtilities.createMethodRef;
 import static java.lang.String.format;
 import static java.lang.String.join;
+import static oopsla.evaluation.utils.CATSTestCases.*;
+import static oopsla.evaluation.utils.EvaluationUtil.checkDirectCall;
+import static oopsla.evaluation.utils.EvaluationUtil.createMethodRef;
 
 /**
  * Evaluates a call graph construction algorithm using the Call Graph & Assessment Suite (CATS).
  *
  * @author Joanna C. S. Santos (jds5109@rit.edu)
  */
-public abstract class RQ1AbstractCatsTest {
+public abstract class RQ1AbstractCatsEval {
     private final String outputFolder;
     private final Map<String, Pair<MethodReference, MethodReference>> expectedResults;
     private final String approachName;
@@ -51,7 +50,7 @@ public abstract class RQ1AbstractCatsTest {
 
     private static StringBuilder cgStats = new StringBuilder();
 
-    protected RQ1AbstractCatsTest(String outputFolder, String approachName) {
+    protected RQ1AbstractCatsEval(String outputFolder, String approachName) {
         this.outputFolder = outputFolder;
         this.approachName = approachName;
         this.expectedResults = new HashMap<>();
@@ -113,25 +112,29 @@ public abstract class RQ1AbstractCatsTest {
     }
 
 
-    @TestFactory
-    public Collection<DynamicTest> runCatsTests() {
-        Collection<DynamicTest> dynamicTests = new ArrayList<>();
+    /**
+     * Runs all the experiments for the CATS benchmark.
+     */
+    public void runCatsTests() throws ClassHierarchyException, CallGraphBuilderCancelException, IOException {
+        // validation checks
+        if (EvaluationUtil.TC_ROOT_FOLDER == null)
+            throw new IllegalStateException("The test cases root folder is not set. Please set the `testcase_folder` environment variable.");
+        if (EvaluationUtil.STATIC_CGS_FOLDER == null)
+            throw new IllegalStateException("The static call graphs folder is not set. Please set the `static_cgs_folder` environment variable.");
+
+
         for (String projectPath : expectedResults.keySet()) {
             for (PointerAnalysisPolicy policy : taintedPolicies) {
                 String projectName = FilenameUtils.getBaseName(projectPath).split("-")[0];
                 String testName = join("_", projectName, approachName, policy.toString());
-                DynamicTest dTest = DynamicTest.dynamicTest(testName, () -> {
-                    CallGraph cg = computeCallGraph(projectPath, policy);
-                    Pair<MethodReference, MethodReference> edge = expectedResults.get(projectPath);
-                    saveCallGraph(cg, projectName, policy);
-                    // TODO: capture the test results so it can be saved later in the CgStats file
-                    checkDirectCall(cg, edge.getLeft(), edge.getRight());
-                });
-                dynamicTests.add(dTest);
+                CallGraph cg = computeCallGraph(projectPath, policy);
+                Pair<MethodReference, MethodReference> edge = expectedResults.get(projectPath);
+                // TODO: capture the test results so it can be saved later in the CgStats file
+                checkDirectCall(cg, edge.getLeft(), edge.getRight());
+                // TODO: pass the test results to the saveCallGraph method
+                saveCallGraph(cg, projectName, policy);
             }
-
         }
-        return dynamicTests;
     }
 
 
@@ -176,12 +179,11 @@ public abstract class RQ1AbstractCatsTest {
     }
 
 
-    @AfterAll
     public static void printAndSaveStats() throws IOException {
         System.out.println(cgStats.toString());
         // save call graph stats per test case
         DateFormat f = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss-mmm");
-        File txtStatsFile = new File(format("%s/CgStats-%s.txt", TestUtilities.CATS_STATIC_CGS_FOLDER, f.format(new Date())));
+        File txtStatsFile = new File(format("%s/CgStats-%s.txt", EvaluationUtil.CATS_STATIC_CGS_FOLDER, f.format(new Date())));
         cgStats.insert(0, "ProjectName\tTestCase\tApproachName\tPolicy\t# Nodes\t#Edges\n");
         FileUtils.write(txtStatsFile, cgStats.toString(), Charset.defaultCharset());
     }
