@@ -22,31 +22,6 @@ rm -f $RESULTS_FOLDER/*.txt
 rm -f $RESULTS_FOLDER/*.csv
 
 
-## Step 1: Run Salsa & Seneca on CATS benchmark
-echo "Running *Salsa* on CATS benchmark"
-java -cp $SENECA_JAR \
-	-Dtestcase_folder=$JAR_FOLDER \
-	-Dstatic_cgs_folder=$STATIC_CGS_FOLDER \
-	oopsla.evaluation.RQ1SalsaCatsEval
-echo "Done! Call graphs saved on $STATIC_CGS_FOLDER"
-
-
-echo "Running *Seneca* on CATS benchmark"
-java -cp $SENECA_JAR \
-	-Dtestcase_folder=$JAR_FOLDER \
-	-Dstatic_cgs_folder=$STATIC_CGS_FOLDER \
-	oopsla.evaluation.RQ1SenecaCatsEval
-echo "Done! Call graphs saved on $STATIC_CGS_FOLDER"
-
-
-## Step 2: Run Salsa & Seneca on XCorpus benchmark
-echo "Running *Salsa* and *Seneca* on XCorpus benchmark"
-java -cp $SENECA_JAR \
-	-Dtestcase_folder=$JAR_FOLDER \
-	-Dstatic_cgs_folder=$STATIC_CGS_FOLDER \
-	oopsla.evaluation.RQ1XCorpusEval
-echo "Done! Call graphs saved on $STATIC_CGS_FOLDER"
-
 
 ## Compares the call graphs
 idx=0 # iteration counter
@@ -58,10 +33,6 @@ do
     ## output files
     comparison_results=$RESULTS_FOLDER/${project_name}-results.csv
     comparison_differences=$RESULTS_FOLDER/${project_name}-differences.txt
-
-    ## Compute Dynamic Call Graph
-    echo "Computing dynamic call graph for ${project_name}"
-    ./computeDynamicCGs.sh ${project_name} ../dataset/testcases/${project} ../dataset/testcases/${project}/target/${project_name}-testcases-1.0-jar-with-dependencies.jar
 
     ## Compute differences
     echo "Computing differences for ${project_name}"

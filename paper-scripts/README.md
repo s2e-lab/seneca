@@ -11,9 +11,19 @@
 - `Results.xlsx`: a spreadsheet that compiles all the results into charts and tables.
 
 
+## Reproducing Results
 
 
-## RQ1 Results (Section 5.1)
+
+
+### Computings the call graphs for the benchmarks datasets
+1. `cd paper-scripts/scripts`
+2. Run the script `./run_tools.sh` (this computes the static/dynamic call graphs and saves them on the `static-cgs` and `dynamic-cgs` folders, respectively).
+
+
+
+
+### RQ1 Results (Section 5.1)
 
 - **Associated Script(s)**: `./scripts/run_rq1.sh`
 - **Results location**: These results were obtained by comparing the static call graphs (located within static-cgs) against the runtime call graphs located in the folder [runtime-cgs](runtime-cgs).
@@ -21,16 +31,9 @@
 	- RQ1-XCorpus-Soundness
 	- RQ1-CATS
 	- RQ1-CATS-Sizes
-- **How to reproduce results**:
-	```
-	docker build -t seneca .
-	docker run seneca /usr/src/seneca/paper-scripts/scripts/run_rq1.sh
-	```
-
-The command above will take some minutes to complete. This script will:
-	(1) use Salsa and Seneca to compute call graphs for the programs on the CATs and XCorpus benchmarks (saved on `static-cgs` folder); 
-	(2) run an instrumentation agent to compute the dynamic call graphs  (saved on `dynamic-cgs` folder); and
-	(3) run a python script that compares the static call graph with the runtime call graph to create a summary of the differences (saved on `results/rq1/*.csv`).
+- **How to reproduce RQ1 results**: 
+	- Execute the script `./run_rq1.sh`
+	- The command above will take some minutes to complete. This script will run a python script that compares the static call graph with the runtime call graph to create a summary of the differences (saved on `results/rq1/*.csv`).
 
 
 ## RQ2 Results (Section 5.2)
@@ -40,12 +43,19 @@ The command above will take some minutes to complete. This script will:
 - **Spreadsheet tabs on Results.xlsx**: 
 	- RQ2-CATS-Precision
 	- RQ2-XCorpus-Precision
-	
+- **How to reproduce RQ2 results**: _(You **must** have executed `run_rq1.sh` first so that all static call graphs and dynamic call graphs are computed and saved.)_
+	- Execute the script `./run_rq2.sh`
+	- Results will be saved on `results/rq2/*.csv`.
+
+
+
 
 ## RQ3 Results (Section 5.3)
 - **Spreadsheet tabs on Results.xlsx**: 
 	- RQ3-Performance
+- **Associated Script(s)**: `./scripts/run_tools.sh` (already executed above!). That script already invoked Seneca that generated time information and saved on `../static-cgs/TimeStats-YYYY-MM-DD NN-NN-NN-NNN.txt`
 
 ## RQ4 Results (Section 5.4)
+- **Associated Script(s)**: `./scripts/run_rq4.sh`
 - **Spreadsheet tabs on Results.xlsx**: 
 	- RQ4-Vulnerabilities

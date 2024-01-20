@@ -34,6 +34,7 @@ Configure the JAVA_HOME environment variable to point to where JDK is installed.
   Call graph tool struggles with native code etc.
 - `run_rq1.sh`: it computes the dynamic call graphs for each test case and then compute the metrics.
 - `run_rq2.sh`: it computes the precision for our approach and saves the CSV results on the rq2 folder.
+- `run_tools.sh`: it runs Salsa and Seneca to compute the static call graphs for the benchmarking programs. It also uses the custom JVMTI agent to instrument the benchmark programs to compute dynamic call graphs.
 
 ##  Configuration Files
 
