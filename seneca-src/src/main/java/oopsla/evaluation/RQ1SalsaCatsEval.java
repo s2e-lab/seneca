@@ -13,6 +13,9 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.io.File;
 import java.io.IOException;
 
+import static oopsla.evaluation.utils.EvaluationUtil.STATIC_CGS_FOLDER;
+import static oopsla.evaluation.utils.EvaluationUtil.TC_ROOT_FOLDER;
+
 
 /**
  * This class runs Salsa over the CATS dataset.
@@ -36,6 +39,11 @@ public class RQ1SalsaCatsEval extends RQ1AbstractCatsEval {
     }
 
     public static void main(String[] args) throws ClassHierarchyException, CallGraphBuilderCancelException, IOException {
+        if(TC_ROOT_FOLDER == null || STATIC_CGS_FOLDER == null) {
+            throw new RuntimeException("Please provide the following program properties: " +
+                    "\n\t-Dtestcase_folder=/path/to/cats/testcases" +
+                    "\n\t-Dstatic_cgs_folder=/path/to/where/static/call/graphs/should/be/saved");
+        }
         RQ1SalsaCatsEval eval = new RQ1SalsaCatsEval();
         eval.runCatsTests();
     }

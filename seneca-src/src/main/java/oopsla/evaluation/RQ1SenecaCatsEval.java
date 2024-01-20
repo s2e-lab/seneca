@@ -14,6 +14,9 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.io.File;
 import java.io.IOException;
 
+import static oopsla.evaluation.utils.EvaluationUtil.STATIC_CGS_FOLDER;
+import static oopsla.evaluation.utils.EvaluationUtil.TC_ROOT_FOLDER;
+
 public class RQ1SenecaCatsEval extends RQ1AbstractCatsEval {
 
 
@@ -34,6 +37,11 @@ public class RQ1SenecaCatsEval extends RQ1AbstractCatsEval {
 
 
     public static void main(String[] args) throws ClassHierarchyException, CallGraphBuilderCancelException, IOException {
+        if(TC_ROOT_FOLDER == null || STATIC_CGS_FOLDER == null) {
+            throw new RuntimeException("Please provide the following program properties: " +
+                    "\n\t-Dtestcase_folder=/path/to/cats/testcases" +
+                    "\n\t-Dstatic_cgs_folder=/path/to/where/static/call/graphs/should/be/saved");
+        }
         RQ1SenecaCatsEval eval = new RQ1SenecaCatsEval();
         eval.runCatsTests();
     }
