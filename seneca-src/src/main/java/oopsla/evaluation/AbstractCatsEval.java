@@ -39,7 +39,7 @@ import static oopsla.evaluation.utils.EvaluationUtil.createMethodRef;
  *
  * @author Joanna C. S. Santos (jds5109@rit.edu)
  */
-public abstract class RQ1AbstractCatsEval {
+public abstract class AbstractCatsEval {
     private final String outputFolder;
     private final Map<String, Pair<MethodReference, MethodReference>> expectedResults;
     private final String approachName;
@@ -50,7 +50,7 @@ public abstract class RQ1AbstractCatsEval {
 
     private static StringBuilder cgStats = new StringBuilder();
 
-    protected RQ1AbstractCatsEval(String outputFolder, String approachName) {
+    protected AbstractCatsEval(String outputFolder, String approachName) {
         this.outputFolder = outputFolder;
         this.approachName = approachName;
         this.expectedResults = new HashMap<>();

@@ -21,9 +21,9 @@ import static oopsla.evaluation.utils.EvaluationUtil.TC_ROOT_FOLDER;
  * This class runs Salsa over the CATS dataset.
  * @author Joanna C. S. Santos (jds5109@rit.edu).
  */
-public class RQ1SalsaCatsEval extends RQ1AbstractCatsEval {
+public class SalsaCatsEval extends AbstractCatsEval {
 
-    protected RQ1SalsaCatsEval() {
+    protected SalsaCatsEval() {
         super(EvaluationUtil.CATS_STATIC_CGS_FOLDER, "Salsa");
     }
 
@@ -44,7 +44,7 @@ public class RQ1SalsaCatsEval extends RQ1AbstractCatsEval {
                     "\n\t-Dtestcase_folder=/path/to/cats/testcases" +
                     "\n\t-Dstatic_cgs_folder=/path/to/where/static/call/graphs/should/be/saved");
         }
-        RQ1SalsaCatsEval eval = new RQ1SalsaCatsEval();
+        SalsaCatsEval eval = new SalsaCatsEval();
         eval.runCatsTests();
     }
 

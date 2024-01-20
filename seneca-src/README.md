@@ -41,24 +41,24 @@ This section describes how to reproduce the experiments for the paper.
 
 
 ### RQ1 (Soundness) - Section 5.1
-This RQ uses two different benchmarks: `CATs` and `XCorpus`. These experiments are implemented in `oopsla.evaluation.RQ1SalsaCatsEval`, `oopsla.evaluation.RQ1SenecaCats`, `oopsla.evaluation.RQ1XCorpus`.
+This RQ uses two different benchmarks: `CATs` and `XCorpus`. These experiments are implemented in `oopsla.evaluation.SalsaCatsEval`, `oopsla.evaluation.RQ1SenecaCats`, `oopsla.evaluation.RQ1XCorpus`.
 
 #### Reproducing the results for RQ1 - CATs benchmark (Section 5.1.1)
 
-- `oopsla.evaluation.RQ1SalsaCatsEval`: runs the experiments for the soundness of the call graph built by `Salsa` for the `CATs` benchmark.
+- `oopsla.evaluation.SalsaCatsEval`: runs the experiments for the soundness of the call graph built by `Salsa` for the `CATs` benchmark.
 From the top-level directory of this repository, run the following command:
 
 ```shell
-java -cp seneca.jar -Dtestcase_folder=./paper-scripts/dataset/build/ -Dstatic_cgs_folder=./target/rq1/ oopsla.evaluation.RQ1SalsaCatsEval 
+java -cp seneca.jar -Dtestcase_folder=./paper-scripts/dataset/build/ -Dstatic_cgs_folder=./target/rq1/ oopsla.evaluation.SalsaCatsEval 
 ```
 This computed the call graph for the `CATs` benchmark using `Salsa` and store the results in the folder `./target/rq1/`.
 
 
 
-- `oopsla.evaluation.RQ1SenecaCatsEval`: runs the experiments for the soundness of the call graph built by `Seneca` for the `CATs` benchmark.
+- `oopsla.evaluation.SenecaCatsEval`: runs the experiments for the soundness of the call graph built by `Seneca` for the `CATs` benchmark.
 
 ```shell
-java -cp seneca.jar -Dtestcase_folder=./paper-scripts/dataset/build/ -Dstatic_cgs_folder=./target/rq1/ oopsla.evaluation.RQ1SenecaCatsEval 
+java -cp seneca.jar -Dtestcase_folder=./paper-scripts/dataset/build/ -Dstatic_cgs_folder=./target/rq1/ oopsla.evaluation.SenecaCatsEval 
 ```
 
 This computed the call graph for the `CATs` benchmark using `Seneca` and store the results in the folder `./target/rq1/`.

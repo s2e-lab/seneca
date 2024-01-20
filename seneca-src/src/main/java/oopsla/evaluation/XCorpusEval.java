@@ -43,7 +43,7 @@ import static oopsla.evaluation.utils.EvaluationUtil.*;
  *
  * @author Joanna C. S. Santos
  */
-public class RQ1XCorpusEval {
+public class XCorpusEval {
 
     public static final StringBuilder cgStats = new StringBuilder();
     public static final StringBuilder timeStats = new StringBuilder();
@@ -239,7 +239,7 @@ public class RQ1XCorpusEval {
                     "\n\t-Dtestcase_folder=/path/to/cats/testcases" +
                     "\n\t-Dstatic_cgs_folder=/path/to/where/static/call/graphs/should/be/saved");
         }
-        RQ1XCorpusEval eval = new RQ1XCorpusEval();
+        XCorpusEval eval = new XCorpusEval();
         eval.runXCorpusEval();
     }
 }

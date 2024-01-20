@@ -6,7 +6,6 @@ import com.ibm.wala.ipa.callgraph.CallGraphBuilder;
 import com.ibm.wala.ipa.callgraph.CallGraphBuilderCancelException;
 import com.ibm.wala.ipa.cha.ClassHierarchyException;
 import edu.rit.se.design.callgraph.analysis.PointerAnalysisPolicy;
-import edu.rit.se.design.callgraph.cli.Salsa;
 import edu.rit.se.design.callgraph.cli.Seneca;
 import oopsla.evaluation.utils.EvaluationUtil;
 import org.apache.commons.lang3.tuple.Pair;
@@ -17,10 +16,10 @@ import java.io.IOException;
 import static oopsla.evaluation.utils.EvaluationUtil.STATIC_CGS_FOLDER;
 import static oopsla.evaluation.utils.EvaluationUtil.TC_ROOT_FOLDER;
 
-public class RQ1SenecaCatsEval extends RQ1AbstractCatsEval {
+public class SenecaCatsEval extends AbstractCatsEval {
 
 
-    protected RQ1SenecaCatsEval() {
+    protected SenecaCatsEval() {
         super(EvaluationUtil.CATS_STATIC_CGS_FOLDER, "Seneca");
     }
 
@@ -42,7 +41,7 @@ public class RQ1SenecaCatsEval extends RQ1AbstractCatsEval {
                     "\n\t-Dtestcase_folder=/path/to/cats/testcases" +
                     "\n\t-Dstatic_cgs_folder=/path/to/where/static/call/graphs/should/be/saved");
         }
-        RQ1SenecaCatsEval eval = new RQ1SenecaCatsEval();
+        SenecaCatsEval eval = new SenecaCatsEval();
         eval.runCatsTests();
     }
 }
