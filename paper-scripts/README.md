@@ -16,13 +16,6 @@
 
 
 
-### Computings the call graphs for the benchmarks datasets
-1. `cd paper-scripts/scripts`
-2. Run the script `./run_tools.sh` (this computes the static/dynamic call graphs and saves them on the `static-cgs` and `dynamic-cgs` folders, respectively).
-
-
-
-
 ### RQ1 Results (Section 5.1)
 
 - **Associated Script(s)**: `./scripts/run_rq1.sh`
@@ -53,7 +46,7 @@
 ## RQ3 Results (Section 5.3)
 - **Spreadsheet tabs on Results.xlsx**: 
 	- RQ3-Performance
-- **Associated Script(s)**: `./scripts/run_tools.sh` (already executed above!). That script already invoked Seneca that generated time information and saved on `../static-cgs/TimeStats-YYYY-MM-DD NN-NN-NN-NNN.txt`
+- **Associated Script(s)**: timestamps are already computed when running RQ1. That script already invoked Seneca that generated time information and saved on `../static-cgs/TimeStats-YYYY-MM-DD NN-NN-NN-NNN.txt`
 
 ## RQ4 Results (Section 5.4)
 - **Associated Script(s)**: `./scripts/run_rq4.sh`

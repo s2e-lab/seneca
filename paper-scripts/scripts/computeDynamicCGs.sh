@@ -9,7 +9,7 @@
 [[ -z "${JAVA_HOME}" ]] && echo "JAVA_HOME is not set" && exit 
 
 
-JAVA_HOME=/Users/joanna/Library/Java/JavaVirtualMachines/liberica-1.8.0_333
+# JAVA_HOME=/Users/joanna/Library/Java/JavaVirtualMachines/liberica-1.8.0_333
 # Hardcoded paths to JRE environment
 JRE_LIB="${JAVA_HOME}/jre/lib"
 JAVA_LIB="${JAVA_HOME}/lib"
