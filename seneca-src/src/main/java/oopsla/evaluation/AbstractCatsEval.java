@@ -49,6 +49,7 @@ public abstract class AbstractCatsEval {
     };
 
     private static StringBuilder cgStats = new StringBuilder();
+    private static StringBuilder testResultsStats = new StringBuilder();
 
     protected AbstractCatsEval(String outputFolder, String approachName) {
         this.outputFolder = outputFolder;
@@ -122,19 +123,27 @@ public abstract class AbstractCatsEval {
         if (EvaluationUtil.STATIC_CGS_FOLDER == null)
             throw new IllegalStateException("The static call graphs folder is not set. Please set the `static_cgs_folder` environment variable.");
 
-
         for (String projectPath : expectedResults.keySet()) {
             for (PointerAnalysisPolicy policy : taintedPolicies) {
                 String projectName = FilenameUtils.getBaseName(projectPath).split("-")[0];
                 String testName = join("_", projectName, approachName, policy.toString());
+                System.out.println(testName);
                 CallGraph cg = computeCallGraph(projectPath, policy);
                 Pair<MethodReference, MethodReference> edge = expectedResults.get(projectPath);
-                // TODO: capture the test results so it can be saved later in the CgStats file
-                checkDirectCall(cg, edge.getLeft(), edge.getRight());
-                // TODO: pass the test results to the saveCallGraph method
+                //  capture the test results, so it can be saved later in the stats file
+                try {
+                    checkDirectCall(cg, edge.getLeft(), edge.getRight());
+                    testResultsStats.append(testName).append("\t").append("true").append("\n");
+                    System.out.println("\tTest passed");
+                }catch (Exception e){
+                    testResultsStats.append(testName).append("\t").append("false").append("\n");
+                    System.out.println("\tTest failed");
+                }
+                //  saveCallGraphs
                 saveCallGraph(cg, projectName, policy);
             }
         }
+        printAndSaveStats(approachName);
     }
 
 
@@ -145,9 +154,8 @@ public abstract class AbstractCatsEval {
      * @param computedCg the call graph to be saved
      * @param sampleName a unique identifier for the test case
      * @param policy     the pointer analysis policy used to compute the call graph
-     * @throws IOException if the file cannot be saved
      */
-    private void saveCallGraph(CallGraph computedCg, String sampleName, PointerAnalysisPolicy policy) throws IOException {
+    private void saveCallGraph(CallGraph computedCg, String sampleName, PointerAnalysisPolicy policy) {
         CallGraphStats.CGStats stats = CallGraphStats.getCGStats(computedCg);
         cgStats.append(format("%s\t%s\t%s\t%s\t%s\n", approachName, sampleName, policy, stats.getNNodes(), stats.getNEdges()));
 
@@ -179,13 +187,18 @@ public abstract class AbstractCatsEval {
     }
 
 
-    public static void printAndSaveStats() throws IOException {
+    public static void printAndSaveStats(String approachName) throws IOException {
         System.out.println(cgStats.toString());
         // save call graph stats per test case
         DateFormat f = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss-mmm");
-        File txtStatsFile = new File(format("%s/CgStats-%s.txt", EvaluationUtil.CATS_STATIC_CGS_FOLDER, f.format(new Date())));
+        File txtStatsFile = new File(format("%s/CgStats-%s-%s.txt", EvaluationUtil.CATS_STATIC_CGS_FOLDER, approachName, f.format(new Date())));
         cgStats.insert(0, "ProjectName\tTestCase\tApproachName\tPolicy\t# Nodes\t#Edges\n");
         FileUtils.write(txtStatsFile, cgStats.toString(), Charset.defaultCharset());
+
+        // save test results
+        File testsStatsFile = new File(format("%s/CATS-test-results-%s-%s.txt", EvaluationUtil.CATS_STATIC_CGS_FOLDER, approachName, f.format(new Date())));
+        testResultsStats.insert(0, "Test Name\tPass/Fail\n");
+        FileUtils.write(testsStatsFile, testResultsStats.toString(), Charset.defaultCharset());
     }
 
     protected abstract CallGraph computeCallGraph(String projectPath, PointerAnalysisPolicy policy) throws IOException, ClassHierarchyException, CallGraphBuilderCancelException;

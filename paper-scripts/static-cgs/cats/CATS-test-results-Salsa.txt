@@ -1,0 +1,19 @@
+Test Name	Pass/Fail
+Ser9_Salsa_0-1-CFA	true
+Ser9_Salsa_1-CFA	true
+Ser2_Salsa_0-1-CFA	true
+Ser2_Salsa_1-CFA	true
+Ser5_Salsa_0-1-CFA	true
+Ser5_Salsa_1-CFA	true
+Ser8_Salsa_0-1-CFA	true
+Ser8_Salsa_1-CFA	true
+Ser3_Salsa_0-1-CFA	true
+Ser3_Salsa_1-CFA	true
+Ser6_Salsa_0-1-CFA	true
+Ser6_Salsa_1-CFA	true
+Ser4_Salsa_0-1-CFA	true
+Ser4_Salsa_1-CFA	true
+Ser1_Salsa_0-1-CFA	true
+Ser1_Salsa_1-CFA	true
+Ser7_Salsa_0-1-CFA	true
+Ser7_Salsa_1-CFA	true

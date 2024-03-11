@@ -14,7 +14,20 @@
 ## Reproducing Results
 
 
+This section describes how to reproduce the experiments for the paper.
 
+
+RQ1 uses two different benchmarks: `CATs` and `XCorpus`. 
+RQ2-RQ3 uses the `XCorpus` dataset. RQ4 uses a dataset of vulnerable projects (FileUpload, Vaadin, Wicket).
+These experiments are implemented in the Java classes `oopsla.evaluation.SalsaCatsEval`, `oopsla.evaluation.RQ1SenecaCats`, `oopsla.evaluation.RQ1XCorpus`, and `oopsla.evaluation.VulnerabilityFindingEval`.
+
+### Running Salsa and Seneca
+
+To start the results reproduction, we need to compute the static call graphs by Salsa, Wala, and Seneca as well as the runtime call graphs of the programs in the CATS and XCorpus datasets.
+
+
+
+- `./run_tools.sh`: it will compute the static and runtime call graphs.
 
 ### RQ1 Results (Section 5.1)
 

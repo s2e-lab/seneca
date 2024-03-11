@@ -1,0 +1,19 @@
+ProjectName	TestCase	ApproachName	Policy	# Nodes	#Edges
+Seneca	Ser9	0-1-CFA	724	1325
+Seneca	Ser9	1-CFA	1592	2843
+Seneca	Ser2	0-1-CFA	772	1529
+Seneca	Ser2	1-CFA	1878	3540
+Seneca	Ser5	0-1-CFA	722	1323
+Seneca	Ser5	1-CFA	1590	2841
+Seneca	Ser8	0-1-CFA	729	1333
+Seneca	Ser8	1-CFA	1601	2855
+Seneca	Ser3	0-1-CFA	772	1528
+Seneca	Ser3	1-CFA	1877	3539
+Seneca	Ser6	0-1-CFA	546	940
+Seneca	Ser6	1-CFA	1068	1718
+Seneca	Ser4	0-1-CFA	722	1323
+Seneca	Ser4	1-CFA	1590	2841
+Seneca	Ser1	0-1-CFA	771	1527
+Seneca	Ser1	1-CFA	1876	3538
+Seneca	Ser7	0-1-CFA	722	1323
+Seneca	Ser7	1-CFA	1590	2841
