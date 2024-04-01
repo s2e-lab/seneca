@@ -17,35 +17,40 @@
 This section describes how to reproduce the experiments for the paper.
 
 
-RQ1 uses two different benchmarks: `CATs` and `XCorpus`. 
-RQ2-RQ3 uses the `XCorpus` dataset. RQ4 uses a dataset of vulnerable projects (FileUpload, Vaadin, Wicket).
+- RQ1 uses two different benchmarks: `CATs` and `XCorpus`. 
+- RQ2-RQ3 uses the `XCorpus` dataset. 
+- RQ4 uses a dataset of vulnerable projects (FileUpload, Vaadin, Wicket). 
+
 These experiments are implemented in the Java classes `oopsla.evaluation.SalsaCatsEval`, `oopsla.evaluation.RQ1SenecaCats`, `oopsla.evaluation.RQ1XCorpus`, and `oopsla.evaluation.VulnerabilityFindingEval`.
 
 ### Running Salsa and Seneca
 
 To start the results reproduction, we need to compute the static call graphs by Salsa, Wala, and Seneca as well as the runtime call graphs of the programs in the CATS and XCorpus datasets.
 
+To do so, run the script:
+```
+./run_tools.sh
+```
 
-
-- `./run_tools.sh`: it will compute the static and runtime call graphs.
+This will compute the static and runtime call graphs for the programs in the `CATs` and `XCorpus` benchmarks.
 
 ### RQ1 Results (Section 5.1)
 
 - **Associated Script(s)**: `./scripts/run_rq1.sh`
-- **Results location**: These results were obtained by comparing the static call graphs (located within static-cgs) against the runtime call graphs located in the folder [runtime-cgs](runtime-cgs).
+- **Results location**: These results were obtained by comparing the static call graphs (located within [static-cgs](static-cgs)) against the runtime call graphs located in the folder [runtime-cgs](runtime-cgs).
 - **Spreadsheet tabs on Results.xlsx**: 
 	- RQ1-XCorpus-Soundness
 	- RQ1-CATS
 	- RQ1-CATS-Sizes
 - **How to reproduce RQ1 results**: 
-	- Execute the script `./run_rq1.sh`
+	- Execute the script `./run_rq1.sh` _(You **must** have executed `run_tools.sh` first.)_
 	- The command above will take some minutes to complete. This script will run a python script that compares the static call graph with the runtime call graph to create a summary of the differences (saved on `results/rq1/*.csv`).
 
 
 ## RQ2 Results (Section 5.2)
 
 - **Associated Script(s)**: `./scripts/run_rq2.sh`
-- **Results location**: These results were obtained by comparing the static call graphs (located within static-cgs) against the runtime call graphs located in the folder [runtime-cgs](runtime-cgs), but with the difference that we search for edges in the static call graph but that are not in the runtime call graph (imprecise).
+- **Results location**: These results were obtained by comparing the static call graphs (located within [static-cgs](static-cgs)) against the runtime call graphs (located in the folder [runtime-cgs](runtime-cgs)), but with the difference that we search for edges **_in_** the static call graph but that **_are not_** in the runtime call graph (imprecise).
 - **Spreadsheet tabs on Results.xlsx**: 
 	- RQ2-CATS-Precision
 	- RQ2-XCorpus-Precision
