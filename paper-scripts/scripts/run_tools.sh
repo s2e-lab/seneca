@@ -45,7 +45,7 @@ echo "################################################"
 
 ## Step 3: Compute dynamic call graphs
 echo "################################################"
-echo "Computing dynamic call graphs"
+echo "Computing dynamic call graphs for programs on the XCorpus benchmark"
 idx=0 # iteration counter
 for project in "${PROJECTS[@]}"
 do
@@ -57,5 +57,20 @@ do
     ./computeDynamicCGs.sh ${project_name} ../dataset/testcases/${project} ../dataset/testcases/${project}/target/${project_name}-testcases-1.0-jar-with-dependencies.jar
 done
 echo "Done!"
+
+
+# echo "################################################"
+# echo "Computing dynamic call graphs for programs on the XCorpus benchmark"
+# idx=0 # iteration counter
+# for project in "${PROJECTS[@]}"
+# do
+#     project_name=${PROJECT_NAMES[$idx]}
+#     idx=$((idx+1))
+
+#     ## Compute Dynamic Call Graph
+#     echo "Computing dynamic call graph for ${project_name}"
+#     ./computeDynamicCGs.sh ${project_name} ../dataset/testcases/${project} ../dataset/testcases/${project}/target/${project_name}-testcases-1.0-jar-with-dependencies.jar
+# done
+# echo "Done!"
 
 

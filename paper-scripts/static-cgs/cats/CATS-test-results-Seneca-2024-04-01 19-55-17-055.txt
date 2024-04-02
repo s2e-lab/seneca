@@ -1,0 +1,19 @@
+Test Name	Pass/Fail
+Ser6_Seneca_0-1-CFA	true
+Ser6_Seneca_1-CFA	true
+Ser7_Seneca_0-1-CFA	true
+Ser7_Seneca_1-CFA	true
+Ser5_Seneca_0-1-CFA	true
+Ser5_Seneca_1-CFA	true
+Ser1_Seneca_0-1-CFA	true
+Ser1_Seneca_1-CFA	true
+Ser4_Seneca_0-1-CFA	true
+Ser4_Seneca_1-CFA	true
+Ser2_Seneca_0-1-CFA	true
+Ser2_Seneca_1-CFA	true
+Ser3_Seneca_0-1-CFA	true
+Ser3_Seneca_1-CFA	true
+Ser8_Seneca_0-1-CFA	true
+Ser8_Seneca_1-CFA	true
+Ser9_Seneca_0-1-CFA	true
+Ser9_Seneca_1-CFA	true

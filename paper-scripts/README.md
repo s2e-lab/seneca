@@ -33,6 +33,8 @@ To do so, run the script:
 ```
 
 This will compute the static and runtime call graphs for the programs in the `CATs` and `XCorpus` benchmarks.
+Notice this script assumes that you are currently located at `seneca/paper-scripts/scripts/` (ie, that you are running the script from the same folder it is located).
+Running from other locations will lead to errors.
 
 ### RQ1 Results (Section 5.1)
 
@@ -50,7 +52,7 @@ This will compute the static and runtime call graphs for the programs in the `CA
 ## RQ2 Results (Section 5.2)
 
 - **Associated Script(s)**: `./scripts/run_rq2.sh`
-- **Results location**: These results were obtained by comparing the static call graphs (located within [static-cgs](static-cgs)) against the runtime call graphs (located in the folder [runtime-cgs](runtime-cgs)), but with the difference that we search for edges **_in_** the static call graph but that **_are not_** in the runtime call graph (imprecise).
+- **Results location**: These results were obtained by comparing the static call graphs (folder: [static-cgs](static-cgs)) against the runtime call graphs (folder: [runtime-cgs](runtime-cgs)), but with the difference that we search for edges **_in_** the static call graph but that **_are not_** in the runtime call graph (imprecise).
 - **Spreadsheet tabs on Results.xlsx**: 
 	- RQ2-CATS-Precision
 	- RQ2-XCorpus-Precision
