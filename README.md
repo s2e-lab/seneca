@@ -3,8 +3,7 @@
 This repository contains the source code for `Seneca`, a taint-based call graph construction for Java programs. This tool is part of the following paper:
 
 ```
-Santos, J.C.S., Mirakhorli, M. & Shokri, Ali. "Seneca: Taint-Based Call Graph Construction for Java Object Deserialization."
-OOPSLA (2024). https://doi.org/10.1145/nnnnnnn.nnnnnnn
+Santos, Joanna CS, Mehdi Mirakhorli, and Ali Shokri. "Seneca: taint-based call graph construction for java object deserialization." Proceedings of the ACM on Programming Languages 8.OOPSLA1 (2024): 1125-1153. https://doi.org/10.1145/3649851
 ```
 
 
